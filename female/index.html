@@ -1,0 +1,808 @@
+<html lang="en">
+
+<head>
+    <title>仓鼠阅读隐私政策</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="仓鼠阅读">
+    <meta name="description" content="仓鼠阅读">
+    <meta name="baidu-site-verification" content="PBsX5WrJFF">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="teleaphone=no">
+    <link rel="stylesheet" href="css/base.css">
+    <!-- <link rel="stylesheet" href="css/datePicker.css"> -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link href="css/mui.picker.css" rel="stylesheet">
+	<link href="css/mui.poppicker.css" rel="stylesheet">
+    <style>
+        html,body{
+            background-color: #F5F5F5;
+        }
+        .date-main .swiper-container{
+            height: 21rem;
+        }
+        .date-main .swiper-slide .content{
+            padding: 1.5rem 0;
+            background-color: #ffffff;
+        }
+        .li{
+            padding: 4px 0;
+            text-align: center;
+            font-size: .9375rem;
+        }
+        .li .li-module{
+            margin: 0 auto;
+            width: 1.5rem;
+            height: 1.75rem;
+        }
+        .li.anquan .li-module{
+            color: #67c23a;
+            color: #ffffff;
+            background-image: url(img/anquan.png);
+            background-size: 1.5rem 1.75rem;
+            background-repeat: no-repeat;
+            font-family: 'PingFang SC';
+        }
+        .li.jingqi{
+            color: #e6a23c;
+        }
+        .li.pailuan{
+            color: #f56c6c;
+        }
+        input{
+            padding: 5px 15px;
+            margin: 20px 5%;
+            width: 90%;
+            border: 1px solid #bbbbbb;
+        }
+        /* button{
+            padding: 5px 15px;
+            margin: 20px 5%;
+            background-color: #ebeef5;
+            border: 1px solid #bbb;
+        } */
+        .date-content .li{
+            float: left;
+            width: 14.286%;
+        }
+        .result{
+            margin: 20px 5%;
+        }
+        .date-main{
+            position: relative;
+            margin-top: -5.9375rem;
+        }
+        .date-info{
+            padding-left: 3.3125rem;
+            height: 5.9375rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 1px #666666;
+        }
+        .date-info .cn span{
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .date-info .cn .month{
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+        .date-info .cn .sub{
+            font-size: .75rem;
+        }
+        .date-info .en{
+            font-size: 1.125rem;
+        }
+        /* .swiper-button-next, .swiper-button-prev{
+            top: 1.5rem;
+            margin-top: -10px;
+            width: 20px;
+            height: 20px;
+            background-size: 20px 20px;
+        }
+        .swiper-button-next{
+            background-image: url(img/arrow-right.png);
+        }
+        .swiper-button-prev{
+            background-image: url(img/arrow-left.png);
+        } */
+        .date-control{
+            padding: 0 .9375rem;
+            margin: .625rem 0;
+            background-color: #ffffff;
+        }
+        .date-control .sup img{
+            margin-left: .78125rem;
+            width: .3125rem;
+            height: .625rem;
+        }
+        .date-control .date-li{
+            height: 3.125rem;
+            line-height: 3.125rem;
+            box-sizing: border-box;
+            border-bottom: .032rem solid #E5E5E5;
+        }
+        .date-control .date-li:nth-last-child(1){
+            border-bottom: none;
+        }
+        .date-control .icon {
+            margin-right: .59375rem;
+        }
+        .date-control .cell{
+            font-size: .875rem;
+        }
+        .date-control .sup{
+            font-size: .75rem;
+            color: #999999;
+        }
+        .date-control .icon img{
+            width: .9375rem;
+            height: .9375rem;
+        }
+        .mui-poppicker{
+            width: 80%;
+            bottom: inherit;
+            border-radius: 0.8125rem;
+            -webkit-border-radius: 0.8125rem;
+            overflow: hidden;
+            -webkit-transition: 0s;
+            background-color: #fff;
+        }
+        .mui-poppicker-header{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 100%;
+        }
+        .mui-picker{
+            background-color: #fff;
+        }
+        .mui-poppicker-body{
+            height: 13.125rem;
+             padding: 3.7rem 0 3.75rem;
+        }
+        .mui-poppicker-header{padding: 0;border-top: 1px solid #E5E5E5;}
+        .mui-poppicker-header .mui-btn{background-color: #fff;font-size: 0.8125rem;color: #333;height: 2.75rem;width: 50%;border-radius: inherit;}
+        .mui-poppicker-btn-ok{
+            border: none;
+            border-left: 1px solid #E5E5E5;
+        }
+        .mui-poppicker-btn-cancel{border: none;}
+        .mui-pciker-list, .mui-pciker-rule{
+            height: 1.9375rem;
+            line-height: 1.9375rem;
+        }
+        .mui-poppicker .title{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            padding: 1.25rem 0 1.5625rem;
+            line-height: 1;
+            text-align: center;
+            background-color: #fff;
+            color: #333;
+            font-size: 0.9375rem;
+        }
+        .mui-poppicker.mui-active{
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="date-picker">
+        <img src="img/top.jpg">
+
+        <div class="date-main">
+            <div class="swiper-container calendar-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-module slide-module1">
+                            <div class="date-info">
+                                <div class="cn">
+                                    <span class="year" style="display: none">2018</span>
+                                <span class="month">9</span>
+                                    <span class="sub">月份</span>
+                                </div>
+                                <div class="en">October</div>
+                            </div>
+                            <div class="content">
+                                <div class="date-header flex">
+                                    <div class="li flex-one">一</div>
+                                    <div class="li flex-one">二</div>
+                                    <div class="li flex-one">三</div>
+                                    <div class="li flex-one">四</div>
+                                    <div class="li flex-one">五</div>
+                                    <div class="li flex-one">六</div>
+                                    <div class="li flex-one">日</div>
+                                </div>
+                                <div class="date-content clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-module slide-module2">
+                            <div class="date-info">
+                                <div class="cn">
+                                    <span class="year" style="display: none">2018</span>
+                                    <span class="month">10</span>
+                                    <span class="sub">月份</span>
+                                </div>
+                                <div class="en">October</div>
+                            </div>
+                            <div class="content">
+                                <div class="date-header flex">
+                                    <div class="li flex-one">一</div>
+                                    <div class="li flex-one">二</div>
+                                    <div class="li flex-one">三</div>
+                                    <div class="li flex-one">四</div>
+                                    <div class="li flex-one">五</div>
+                                    <div class="li flex-one">六</div>
+                                    <div class="li flex-one">日</div>
+                                </div>
+                                <div class="date-content clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-module slide-module3">
+                            <div class="date-info">
+                                <div class="cn">
+                                    <span class="year" style="display: none">2018</span>
+                                    <span class="month">11</span>
+                                    <span class="sub">月份</span>
+                                </div>
+                                <div class="en">October</div>
+                            </div>
+                            <div class="content">
+                                <div class="date-header flex">
+                                    <div class="li flex-one">一</div>
+                                    <div class="li flex-one">二</div>
+                                    <div class="li flex-one">三</div>
+                                    <div class="li flex-one">四</div>
+                                    <div class="li flex-one">五</div>
+                                    <div class="li flex-one">六</div>
+                                    <div class="li flex-one">日</div>
+                                </div>
+                                <div class="date-content clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="date-control">
+            <div class="flex date-li stateTime" id="showCityPicker3">
+                <div class="icon flex flex-box">
+                    <img src="img/ic_jl.png">
+                </div>
+                <div class="cell flex-one">最近一次月经开始时间</div>
+                <div class="sup flex flex-box currentYear">
+                    <div class="time" id="currentTime">2018-1-1</div>
+                    <img src="img/ic_more.png"/>
+                </div>
+            </div>
+            <div class="flex date-li dateTime" id="showUserPicker">
+                <div class="icon flex flex-box">
+                    <img src="img/ic_zq.png">
+                </div>
+                <div class="cell flex-one">平均月经周期</div>
+                <div class="sup flex flex-box currentMonth">
+                    <div class="time" id="currentMonth">15天</div>
+                    <img src="img/ic_more.png" />
+                </div>
+            </div>
+            <div class="flex date-li meanTime" id="showUserPickers">
+                <div class="icon flex flex-box">
+                    <img src="img/ic_sj.png">
+                </div>
+                <div class="cell flex-one">经期时间</div>
+                <div class="sup flex flex-box currentDay">
+                    <div class="time" id="currentDay">10天</div>
+                    <img src="img/ic_more.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.picker.js"></script>
+    <script src="js/mui.poppicker.js"></script>
+    <script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="js/datePicker.js"></script> -->
+    <script>
+        var dateCalendar = {
+            direct: 1,
+            initStatus: false,
+            beginTime: '2018-10-1',  //最近周期开始时间
+            cycleTime: '28',  //平均周期
+            periodTime: '7', //经期时间
+            init: function () {
+                this.initSwiper();
+                this.initData();;
+                this.initDirect();
+                this.initMui();
+            },
+            initMui:function(){
+                (function($, doc) {
+                    $.init();
+                    $.ready(function() {
+                        //普通示例
+                        var userPicker = new $.PopPicker({
+                            title:'平均月经周期'
+                        });
+                        userPicker.setData([{
+                            value: '1天',
+                            text: '1天'
+                        }, {
+                            value: '2天',
+                            text: '2天'
+                        }, {
+                            value: '3天',
+                            text: '3天'
+                        }, {
+                            value: '4天',
+                            text: '4天'
+                        }, {
+                            value: '5天',
+                            text: '5天'
+                        }, {
+                            value: '6天',
+                            text: '6天'
+                        }, {
+                            value: '7天',
+                            text: '7天'
+                        }, {
+                            value: '8天',
+                            text: '8天'
+                        }, {
+                            value: '9天',
+                            text: '9天'
+                        }, {
+                            value: '10天',
+                            text: '10天'
+                        }, {
+                            value: '11天',
+                            text: '11天'
+                        }, {
+                            value: '12天',
+                            text: '12天'
+                        }, {
+                            value: '13天',
+                            text: '13天'
+                        }, {
+                            value: '14天',
+                            text: '14天'
+                        }, {
+                            value: '15天',
+                            text: '15天'
+                        }, {
+                            value: '16天',
+                            text: '16天'
+                        }, {
+                            value: '17天',
+                            text: '17天'
+                        }, {
+                            value: '18天',
+                            text: '18天'
+                        }, {
+                            value: '19天',
+                            text: '19天'
+                        }, {
+                            value: '20天',
+                            text: '20天'
+                        }, {
+                            value: '21天',
+                            text: '21天'
+                        }, {
+                            value: '22天',
+                            text: '22天'
+                        }, {
+                            value: '23天',
+                            text: '23天'
+                        }, {
+                            value: '24天',
+                            text: '24天'
+                        }, {
+                            value: '25天',
+                            text: '25天'
+                        }, {
+                            value: '26天',
+                            text: '26天'
+                        }, {
+                            value: '27天',
+                            text: '27天'
+                        }, {
+                            value: '28天',
+                            text: '28天'
+                        }, {
+                            value: '29天',
+                            text: '29天'
+                        }, {
+                            value: '30天',
+                            text: '30天'
+                        }, {
+                            value: '31天',
+                            text: '31天'
+                        }]);
+                        var showUserPickerButton = doc.getElementById('showUserPicker');
+                        // var showUserPickerButton=$(".stateTime");
+                        // var userResult = doc.getElementById('userResult');
+                        // userPicker.pickers[0].setSelectedIndex(27)
+                        showUserPickerButton.addEventListener('tap', function(event) {
+                            var month=doc.getElementById("currentMonth").innerHTML;
+                            var reg =/[\u4e00-\u9fa5]/g;
+                            var days=month.replace(reg,'');
+                            userPicker.pickers[0].setSelectedIndex(days-1);
+                            userPicker.show(function(items) {
+                                // userResult.innerText = JSON.stringify(items[0]);
+                            });
+                        }, false);
+
+                        /**
+                         * 7天
+                        */
+
+                        var userPickers = new $.PopPicker({
+                            title:'经期时间'
+                        });
+                        userPickers.setData([{
+                            value: '1天',
+                            text: '1天'
+                        }, {
+                            value: '2天',
+                            text: '2天'
+                        }, {
+                            value: '3天',
+                            text: '3天'
+                        }, {
+                            value: '4天',
+                            text: '4天'
+                        }, {
+                            value: '5天',
+                            text: '5天'
+                        }, {
+                            value: '6天',
+                            text: '6天'
+                        }, {
+                            value: '7天',
+                            text: '7天'
+                        }, {
+                            value: '8天',
+                            text: '8天'
+                        }, {
+                            value: '9天',
+                            text: '9天'
+                        }, {
+                            value: '10天',
+                            text: '10天'
+                        }, {
+                            value: '11天',
+                            text: '11天'
+                        }, {
+                            value: '12天',
+                            text: '12天'
+                        }, {
+                            value: '13天',
+                            text: '13天'
+                        }, {
+                            value: '14天',
+                            text: '14天'
+                        }, {
+                            value: '15天',
+                            text: '15天'
+                        }]);
+                        var showUserPickersButton = doc.getElementById('showUserPickers');
+                        //设置默认的index值
+                        // var userResult = doc.getElementById('userResult');
+                        showUserPickersButton.addEventListener('tap', function(event) {
+                            var day=doc.getElementById("currentDay").innerHTML;
+                            var reg =/[\u4e00-\u9fa5]/g;
+                            var days=day.replace(reg,'');
+                            userPickers.pickers[0].setSelectedIndex(days-1);
+                            userPickers.show(function(items) {
+                                // userResult.innerText = JSON.stringify(items[0]);
+                                //返回 false 可以阻止选择框的关闭
+                                //return false;
+                            });
+                        }, false);
+                        //-----------------------------------------
+                        // //级联示例
+                        // var cityPicker = new $.PopPicker({
+                        //     layer: 2
+                        // });
+                        // cityPicker.setData(cityData);
+                        // var showCityPickerButton = doc.getElementById('showCityPicker');
+                        // var cityResult = doc.getElementById('cityResult');
+                        // showCityPickerButton.addEventListener('tap', function(event) {
+                        //     cityPicker.show(function(items) {
+                        //         cityResult.innerText = "你选择的城市是:" + items[0].text + " " + items[1].text;
+                        //         //返回 false 可以阻止选择框的关闭
+                        //         //return false;
+                        //     });
+                        // }, false);
+                        //-----------------------------------------
+                        //					//级联示例
+                        var cityPicker3 = new $.PopPicker({
+                            layer: 3,
+                            title:'最近一次月经开始时间'
+                        });
+                        cityPicker3.setData(cityData3);
+                        var showCityPickerButton = doc.getElementById('showCityPicker3');
+
+                        // var cityResult3 = doc.getElementById('cityResult3');
+                        // cityPicker3.pickers[0].setSelectedIndex(10)
+                        // cityPicker3.pickers[1].setSelectedIndex(9)
+                        // cityPicker3.pickers[2].setSelectedIndex(0)
+
+                        showCityPickerButton.addEventListener('tap', function(event) {
+                            var time=doc.getElementById("currentTime").innerHTML;
+                            var year=parseInt(time.substring(0,4));
+                            var month=parseInt(time.substring(5,7));
+                            var day=parseInt(time.substring(7,9));
+                            if(typeof month=='number'){}else{
+                                month=parseInt(time.substring(5,6));
+                            }
+                            if(typeof day=='number'){
+
+                            }else{
+                                day=parseInt(time.substring(7,8));
+                            }
+                            cityPicker3.pickers[0].setSelectedIndex(year-2008);
+                            cityPicker3.pickers[1].setSelectedIndex(month-1);
+                            cityPicker3.pickers[2].setSelectedIndex(day-1);
+                            // debugger
+                            cityPicker3.show(function(items) {
+
+                                // cityResult3.innerText = "你选择的城市是:" + (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+                            });
+                        }, false);
+                    });
+			    })(mui, document);
+            },
+            getData: function (year, month) {
+                var ret = [];
+                if (!year || !month) {
+                    var today = new Date();
+                    year = today.getFullYear();
+                    month = today.getMonth() + 1;
+                }
+
+                var firstDay = new Date(year, month - 1, 1);
+                var firstDayWeekDay = firstDay.getDay();
+                if (firstDayWeekDay === 0) {
+                    firstDayWeekDay = 7;
+                }
+                var lastDayOfLastMonth = new Date(year, month - 1, 0);
+                var lastDateOfLastMonth = lastDayOfLastMonth.getDate();
+                var preMonthDayCount = firstDayWeekDay - 1;
+                var lastDay = new Date(year, month, 0);
+                var lastDate = lastDay.getDate();
+
+                for (var i = 0; i < 7 * 6; i++) {
+                    month = parseInt(month);
+                    var date = i - preMonthDayCount + 1;
+                    var showDate = date;
+                    var thisMonth = month;
+                    var week = (i+1+firstDayWeekDay)%7;
+                    if (date <= 0) {
+                        thisMonth = month - 1;
+                        showDate = lastDateOfLastMonth + date;
+                    } else if (date > lastDate) {
+                        thisMonth = month + 1;
+                        showDate = showDate - lastDate;
+                    }
+                    if (thisMonth === 0) {
+                        thisMonth = 12
+                    };
+                    if (thisMonth === 13) {
+                        thisMonth = 1
+                    };
+                    if (thisMonth <= month) {
+                        ret.push({
+                            month: thisMonth,
+                            date: date,
+                            showDate: showDate
+                        });
+                    }
+                }
+                if(month == 1){
+                    for(var i = 1; i<firstDayWeekDay;i++){
+                        ret.unshift({
+                            month: 0,
+                            date: 0,
+                            showDate: 0
+                        });
+                    }
+                }
+                return ret;
+            },
+            dateInterval: function (g, c) {
+                var gArr = g.split('-');
+                var cArr = c.split('-');
+                var gDate = new Date(gArr[0], gArr[1], gArr[2]);
+                var cDate = new Date(cArr[0], cArr[1], cArr[2]);
+
+                return (gDate - cDate) / (24 * 60 * 60 * 1000);
+            },
+            changeDate: function (year,month,num) {
+                var cDate = new Date(year, month);
+                var list = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                cDate.setMonth(parseInt(parseInt(cDate.getMonth()) + num));
+
+                var month = cDate.getMonth();
+                var year = cDate.getFullYear();
+                if (cDate.getMonth() == 0) {
+                    month = 12;
+                    year = cDate.getFullYear() - 1;
+                }
+                if (month < 10) { month = '0' + month }
+                return {
+                    year: year,
+                    month: month,
+                    enMonth: list[month-1]
+                }
+            },
+            setDate: function(parent,date){  //当切换的时候设置日历和头部日期
+                var $parent = parent.find('.date-info');
+                $parent.find('.year').text(date.year);
+                $parent.find('.month').text(date.month);
+                $parent.find('.en').text(date.enMonth);
+                this.changeCalendarData(parent,date);
+            },
+            computeType: function (day) {  //获取类型
+                var d = this.dateInterval(day, this.beginTime); //获取日期和最近一次经期的时间差
+                var y = d % this.cycleTime;  //除以经期周期
+                if (y < 0) { y = y + parseInt(this.cycleTime) }
+                if (y >= 9 && y <= 18) {
+                    return 2; //排卵期
+                } else if (y >= 0 && y < this.periodTime) {
+                    return 1; //经期
+                } else {
+                    return 0;  //安全期
+                }
+
+            },
+            dateUi: function (data) {
+                console.log(data)
+                var len = data.length;
+                var resultHtml = '';
+                for (var i = 0; i < len; i++) {
+                    if (data[i].date <= 0) {
+                        resultHtml += '<div class="li"></div>'
+                    } else {
+                        var type = this.computeType('2018-' + data[i].month + '-' + data[i].showDate);
+                        if (type == 2) {
+                            resultHtml += '<div class="li pailuan"><div class="li-module">' + data[i].showDate + '</div></div>'
+                        } else if (type == 1) {
+                            resultHtml += '<div class="li jingqi"><div class="li-module">' + data[i].showDate + '</div></div>'
+                        } else {
+                            resultHtml += '<div class="li anquan"><div class="li-module">' + data[i].showDate + '</div></div>'
+                        }
+                    }
+                }
+                return resultHtml;
+            },
+            initSwiper: function () {
+                var self = this;
+                var direct = this.direct;
+                var mySwiper = new Swiper('.calendar-container', {
+                    direction:"horizontal",
+                    loop: true,
+                    observer: true,
+                    initialSlide: 1,
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            var current = $('.swiper-slide-active').find('.slide-module');
+                            var cYear = parseInt($('.swiper-slide-active').find('.year').text());
+                            var cMonth = parseInt($('.swiper-slide-active').find('.month').text());
+
+                            var date1 = self.changeDate(cYear, cMonth, 1);
+                            var date2 = self.changeDate(cYear, cMonth, -1);
+                            if (current.hasClass('slide-module1')) {
+                                self.setDate($(".slide-module2"), date1);
+                                self.setDate($(".slide-module3"), date2);
+                            } else if (current.hasClass('slide-module2')) {
+                                self.setDate($(".slide-module3"), date1);
+                                self.setDate($(".slide-module1"), date2);
+                            } else if (current.hasClass('slide-module3')) {
+                                self.setDate($(".slide-module1"), date1);
+                                self.setDate($(".slide-module2"), date2);
+                            }
+
+                        }
+                    }
+
+                })
+            },
+            initDirect: function() {
+                var self = this;
+                var startX, endX, move;
+                $("body").on("touchstart", function (e) {
+                    // e.preventDefault();
+                    startX = e.originalEvent.changedTouches[0].pageX;
+                });
+                $("body").on("touchend", function (e) {
+                    // e.preventDefault();
+                    endX = e.originalEvent.changedTouches[0].pageX;
+                    move = endX - startX;
+                    if (move <= 0) {
+                        self.direct = 1;
+                    } else {
+                        self.direct = 2;
+                    }
+                });
+            },
+            changeCalendarData: function(parent,date){  //切换的时候
+                var currentData = this.getData(date.year, date.month);
+                var result = this.dateUi(currentData);
+                parent.find(".date-content").html(result);
+            },
+            initData: function (date) {
+                var year = $(".swiper-slide-active .date-info .year").text();
+                var month = $(".swiper-slide-active .date-info .month").text();
+                var currentData = this.getData(year, month);
+                var result = this.dateUi(currentData);
+                $(".swiper-slide-active .date-content").html(result);
+            },
+            bind:function(){
+                // debugger
+                $(".stateTime").click(function(){
+                    new DatePicker("wrap", {
+                        type: "",
+                        name: "月经时间",
+                        mode: function (strs) {
+                            $(".currentYear .time").html(strs);
+                            // console.log(strs)
+                        }
+                    })
+                    // $("body").css("overflow",'hidden')
+                })
+                $(".dateTime").click(function(){
+                    new DatePicker("wrap", {
+                        type: "dateTime",
+                        name: "月经周期",
+                        mode: function (strs) {
+                            $(".currentMonth .time").html(strs);
+                        }
+                    })
+                })
+                $(".meanTime").click(function(){
+                    new DatePicker("wrap", {
+                        type: "time",
+                        name: "经期时间",
+                        mode: function (strs) {
+                            $(".currentDay .time").html(strs);
+                        }
+                    })
+                })
+            }
+        }
+        dateCalendar.init();
+        // new DatePicker("wrap", {
+        //     type: "",
+        //     name: "你妈妈炸了",
+        //     mode: function (strs) {
+        //         console.log(strs)
+        //     }
+        // })
+
+    </script>
+
+</body>
+
+</html>
